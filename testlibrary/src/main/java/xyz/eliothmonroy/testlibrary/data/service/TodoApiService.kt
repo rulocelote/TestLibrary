@@ -8,7 +8,7 @@ import xyz.eliothmonroy.testlibrary.util.BaseServiceBuilder
 
 interface TodoApiService{
     @GET("/todos/{id}")
-    fun getTodo(@Path(value = "id") todoId: Int): Response<Todo>
+    suspend fun getTodo(@Path(value = "id") todoId: Int): Response<Todo>
 
     class Builder{
         fun build():TodoApiService{
